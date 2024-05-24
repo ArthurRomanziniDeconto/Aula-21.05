@@ -5,54 +5,68 @@ programa {
     inteiro contador = 0
     inteiro menu
     inteiro opcao
+    inteiro aux = 0
+    inteiro aux2 = 0
+
 
     funcao inicio() {
       //menu
 
       faca{
-      escreva(" 0 - sair \n 1 - adicionar valor \n 2 - retirar valor \n 3 - historico de movimentacao: \n")
+      escreva(" 0 - Sair \n 1 - Adicionar Valor \n 2 - Adiciona Despesa \n 3 - Historico de Movimentacao: \n")
       leia(opcao)
     
       
         escolha(opcao){
       
       caso 1:
-      requisitaReceita()
-      pare
+        adicionaReceita()
+        pare
 
       caso 2:
-      adicionaReceita()
-      pare
+        adicionaDespesa()
+        pare
+
+      caso 3:
+        historico()
+        para
+        
+      
         }
         
       } enquanto (opcao != 0)
     }
-    funcao requisitaReceita(){
-
-      cadeia status
-      real valor
-      cadeia dataehora
-
-      escreva("Escreva uma descricao para o deposito: \n")
-      leia(status)
-      escreva("Digite o valor do deposito: \n")
-      leia(valor)
-      escreva("Digite a data e hora: \n")
-      leia(dataehora)
-      adicionaReceita(status, valor, dataehora)
-    }
-
-      funcao adicionaReceita(cadeia status, real valor, cadeia dataehora){
-        status[contador] = status
-        valor[contador] = valor 
-        dataehora [contador] = dataehora
-
-      contador ++
-     }
-  }
-
       
+      funcao adicionaReceita(){
+        se(aux < 5) {
+          escreva("Escreva uma descricao para o deposito: \n")
+          leia(status[aux])
+          escreva("Digite o valor do deposito: \n")
+          leia(valor[aux])
+          escreva("Digite a data e hora: \n")
+          leia(dataehora[aux])
+          aux = aux + 1
+        }senao {
+          escreva("Numero max. de receitas atingido")}
+      }
+      funcao adicionaDespesa(){
+        se (aux < 5) {
+          escreva("Escreva uma descricao para a despesa: \n")
+          leia(status[aux])
+          escreva("Digite o valor da despesa: \n")
+          leia(valor[aux])
+          escreva("Digite a data e hora: \n")
+          leia(dataehora[aux])
+          aux = aux + 1
+        }senao {
+          escreva("Numero max. de receitas atingido")}
+        }
+      funcao historico(){
+        
+      }
+}
     
-  
-  
+   
 
+        
+  
